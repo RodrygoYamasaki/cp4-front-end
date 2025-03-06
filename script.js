@@ -86,3 +86,14 @@ document.querySelector('.botao__filtrar').addEventListener('click', () => {
     // Exibe as tarefas filtradas no DOM (somente as pendentes)
     exibirTarefas(tarefasPendentes); 
 });
+
+// Questão 7 - Mapear títulos das tarefas para maiúsculas e exibir no console
+function exibirTitulosMaiusculos() {
+    // Usa o método 'map' para criar uma nova lista de tarefas com os títulos convertidos para maiúsculas
+    const tarefasComTitulosMaiusculos = tarefas.map(tarefa => {
+        return { ...tarefa, titulo: tarefa.titulo.toUpperCase() };  
+    });
+    
+    // Exibe a nova lista no console
+    console.log(tarefasComTitulosMaiusculos);  
+}
