@@ -77,3 +77,12 @@ function adicionarEventosConcluir() {
         });
     });
 }
+
+// Questão 6 - Filtrar tarefas não concluídas
+document.querySelector('.botao__filtrar').addEventListener('click', () => {
+    // Filtra as tarefas para exibir apenas as tarefas que não estão concluídas (concluida = false)
+    const tarefasPendentes = tarefas.filter(tarefa => !tarefa.concluida);
+    
+    // Exibe as tarefas filtradas no DOM (somente as pendentes)
+    exibirTarefas(tarefasPendentes); 
+});
