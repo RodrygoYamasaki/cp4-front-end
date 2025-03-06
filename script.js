@@ -97,3 +97,14 @@ function exibirTitulosMaiusculos() {
     // Exibe a nova lista no console
     console.log(tarefasComTitulosMaiusculos);  
 }
+
+// Questão 8 - Calcular o total de tarefas concluídas
+function exibirTotalConcluidas() {
+    // Usa o método 'reduce' para contar o número de tarefas que têm a propriedade 'concluida' igual a true
+    const totalConcluidas = tarefas.reduce(
+        (total, tarefa) => tarefa.concluida ? total + 1 : total, 0
+    );
+    
+    // Exibe o total de tarefas concluídas em um alerta
+    alert(`Total de tarefas concluídas: ${totalConcluidas}`);
+}
