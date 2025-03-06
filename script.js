@@ -108,3 +108,16 @@ function exibirTotalConcluidas() {
     // Exibe o total de tarefas concluídas em um alerta
     alert(`Total de tarefas concluídas: ${totalConcluidas}`);
 }
+
+// Questão 9 - Utilizar destructuring para exibir título e status de uma tarefa
+function exibirTituloEStatus(id) {
+    // Encontra a tarefa com o id especificado
+    const tarefa = tarefas.find(t => t.id === id);
+    
+    // Se a tarefa for encontrada, usa destructuring para extrair as propriedades 'titulo' e 'concluida'
+    if (tarefa) {
+        const { titulo, concluida } = tarefa;  
+        // Exibe as informações em um alerta
+        alert(`Título: ${titulo}\nConcluída: ${concluida ? 'Sim' : 'Não'}`);
+    }
+}
