@@ -121,3 +121,9 @@ function exibirTituloEStatus(id) {
         alert(`Título: ${titulo}\nConcluída: ${concluida ? 'Sim' : 'Não'}`);
     }
 }
+
+// Questão 10 - Criar uma função que aceita parâmetros e cria uma tarefa
+function criarTarefa(id, titulo, concluida = false) {
+    // Retorna um objeto de tarefa com as propriedades id, título e status de concluída
+    return { id, titulo, concluida };
+}
