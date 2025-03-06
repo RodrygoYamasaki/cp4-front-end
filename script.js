@@ -127,3 +127,19 @@ function criarTarefa(id, titulo, concluida = false) {
     // Retorna um objeto de tarefa com as propriedades id, título e status de concluída
     return { id, titulo, concluida };
 }
+
+// Questão 11 - Criar uma função que aceita múltiplas tarefas como parâmetros REST
+function adicionarMultiplasTarefas(...novasTarefas) {
+    // Utiliza o loop for...of para adicionar cada tarefa ao array 'tarefas'
+    for (let tarefa of novasTarefas) {
+        tarefas.push(tarefa);  // Adiciona cada tarefa individualmente ao array
+    }
+    // Exibe as tarefas atualizadas no DOM
+    exibirTarefas();  
+}
+
+// Função chamada quando o DOM é completamente carregado, para exibir as tarefas iniciais
+document.addEventListener('DOMContentLoaded', () => {
+    // Chama a função para exibir as tarefas no DOM
+    exibirTarefas();
+});
