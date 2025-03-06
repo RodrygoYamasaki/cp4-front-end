@@ -58,3 +58,22 @@ function exibirTarefas(tarefasParaExibir = tarefas) {
     // Após adicionar as tarefas no DOM, chama a função para adicionar eventos aos botões de "Concluir"
     adicionarEventosConcluir();
 }
+
+// Questão 5 - Implementar um botão "Concluir" que altera a propriedade 'concluida'
+function adicionarEventosConcluir() {
+    // Captura todos os botões com a classe 'concluir__tarefa' e adiciona um evento de clique para cada botão
+    document.querySelectorAll('.concluir__tarefa').forEach(botao => {
+        botao.addEventListener('click', () => {
+            // Captura o id da tarefa a partir do atributo 'data-id' do botão clicado
+            const id = parseInt(botao.getAttribute('data-id'));
+            
+            // Atualiza a lista de tarefas, alterando a propriedade 'concluida' da tarefa com o id correspondente
+            tarefas = tarefas.map(tarefa => 
+                tarefa.id === id ? { ...tarefa, concluida: !tarefa.concluida } : tarefa
+            );
+            
+            // Exibe novamente as tarefas após alterar o status de concluída
+            exibirTarefas();
+        });
+    });
+}
